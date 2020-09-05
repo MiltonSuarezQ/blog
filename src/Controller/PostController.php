@@ -48,7 +48,8 @@ class PostController extends AbstractController
             $em=$this->getDoctrine()->getManager();
             $em->persist($post);
             $em->flush();
-            return $this->redirectToRoute('dashboard');
+            $this->addFlash('mensaje_new', 'Post creado correctamente!');
+            return $this->redirectToRoute('ListPosts');
         }
         return $this->render('post/index.html.twig', [
             'form' => $form->createView(),
@@ -75,9 +76,32 @@ class PostController extends AbstractController
     public function listPost(){
         $em = $this->getDoctrine()->getManager();
         $user =$this->getUser();
-        $posts = $em->getRepository(Post::class)->findBy(['user'=>$user]);
+        $posts = $em->getRepository(Post::class)->findBy(array('user'=> $user),
+            array('id' => 'DESC'));
         return $this->render('post/list-posts.html.twig',[
             'posts'=>$posts
         ]);
     }
+
+    /**
+     * @Route("/edit-post/{id}", name="EditPost")
+     */
+    public function edit(Post $post, Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $form = $this->createForm(PostType::class, $post);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()){
+            $em->persist($post);
+            $em->flush();
+            $this->addFlash('mensaje_update', 'Post actualizado correctamente!');
+            return $this->redirectToRoute('ListPosts');
+        }
+        return $this->render('post/edit-post.html.twig', [
+            'formedit' => $form->createView(),
+        ]);
+    }
+
+
 }
