@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Prueba Aplyca{% endblock %}</title>
+        {% block stylesheets %}
+            <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
+            <link rel="stylesheet" href="{{ asset('css/jquery-ui.css') }}">
+            <link rel="stylesheet" href="{{ asset('fonts/icomoon/style.css') }}">
+            <link rel="stylesheet" href="{{ asset('css/magnific-popup.css') }}">
+            <link rel="stylesheet" href="{{ asset('css/owl.carousel.min.css') }}">
+            <link rel="stylesheet" href="{{ asset('css/owl.theme.default.min.css') }}">
+            <link rel="stylesheet" href="{{ asset('https://cdn.jsdelivr.net/npm/mediaelement@4.2.7/build/mediaelementplayer.min.css') }}">
+            <link rel="stylesheet" href="{{ asset('css/aos.css') }}">
+            <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+            <link rel="stylesheet" href="{{ asset('https://fonts.googleapis.com/css?family=Poppins:200,300,400,700,900') }}">
+        {% endblock %}
+    </head>
+    <body>
+        {% block body %}
+            <div class="site-wrap">
+                <div class="site-mobile-menu">
+                    <div class="site-mobile-menu-header">
+                        <div class="site-mobile-menu-close mt-3">
+                            <span class="icon-close2 js-menu-toggle"></span>
+                        </div>
+                    </div>
+                    <div class="site-mobile-menu-body"></div>
+                </div>
+                <header class="site-navbar py-4" role="banner" style="background-color: #f9fcfb">
+                    <div class="container">
+                        <div class="row align-items-center">
+                            <div class="col-3">
+                                <h1 class="site-logo"><a href="{{ path('dashboard') }}" class="h2">Blog Aplyca<span class="text-primary">.</span> </a></h1>
+                            </div>
+                            <div class="col-9">
+                                <nav class="site-navigation position-relative text-right text-md-right" role="navigation">
+                                    <div class="d-block d-lg-none ml-md-0 mr-auto"><a href="#" class="site-menu-toggle js-menu-toggle text-black"><span class="icon-menu h3"></span></a></div>
+                                    <ul class="site-menu js-clone-nav d-none d-lg-block">
+                                        <li class="active">
+                                            <a href="{{ path('home') }}">Home</a>
+                                        </li>
+                                        <li><a href="{{ path('dashboard') }}">Blog</a></li>
+                                        {% if app.user %}
+                                            <li><a href="{{ path('ListPosts') }}">Mis Post</a></li>
+                                        {% endif %}
+                                        {% if app.user %}
+                                        <li><a href="{{ path('NewPost') }}">Crear Post</a></li>
+                                        {% endif %}
+                                        <li><a href="{{ path('contacto') }}">Contacto</a></li>
+                                        {% if app.user %}
+                                            <li><a style="color: red" href="{{ path('app_logout') }}">Logout</a></li>
+                                        {% endif %}
+                                        {% if not app.user %}
+                                        <li><a href="{{ path('app_login') }}">Login</a></li>
+                                        {% endif %}
+                                        {% if not app.user %}
+                                        <li><a href="{{ path('register') }}">Registro</a></li>
+                                        {% endif %}
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+            </div>
+        {% endblock %}
+        {% block javascripts %}
+            <script src="{{ asset('js/jquery-3.3.1.min.js') }}"></script>
+            <script src="{{ asset('js/jquery-migrate-3.0.1.min.js') }}"></script>
+            <script src="{{ asset('js/jquery-ui.js') }}"></script>
+            <script src="{{ asset('js/popper.min.js') }}"></script>
+            <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+            <script src="{{ asset('js/owl.carousel.min.js') }}"></script>
+            <script src="{{ asset('js/jquery.stellar.min.js') }}"></script>
+            <script src="{{ asset('js/jquery.countdown.min.js') }}"></script>
+            <script src="{{ asset('js/jquery.magnific-popup.min.js') }}"></script>
+            <script src="{{ asset('js/aos.js') }}"></script>
+            <script src="{{ asset('js/main.js') }}"></script>
+        {% endblock %}
+    </body>
+</html>

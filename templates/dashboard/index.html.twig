@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{parent()}}{% endblock %}
+
+{% block body %}
+    {{parent()}}
+     <div class="site-wrap">
+        <div class="site-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3">
+                        <div class="featured-user  mb-5 mb-lg-0">
+                            <h3 class="mb-4">Post recientes</h3>
+                            {% for post in pagination %}
+                                <ul class="list-unstyled" style="cursor: pointer" onclick="window.location.href='{{ path('VerPosts',{id:post.id}) }}'">
+                                    <li>
+                                        <a class="d-flex align-items-center">
+                                            <div class="podcaster">
+                                                <span class="d-block">{{ post.titulo }}</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="col-lg-9">
+                        {% for post in pagination %}
+                        <div class="d-block d-md-flex podcast-entry bg-white mb-5" style="cursor: pointer" data-aos="fade-up" onclick="window.location.href='{{ path('VerPosts',{id:post.id}) }}'">
+                            <div class="image" style="background-image: url({{ asset('uploads/images/'~post.image) }});"></div>
+                            <div class="text">
+                                <h3 class="font-weight-light">{{ post.titulo }}</h3>
+                                <div class="text-white mb-3"><span class="text-black-opacity-05"><small><strong>Autor</strong> {{ post.nombre }} <span class="sep">/</span> {{ post.fecha_registro | date('Y-m-d') }} </small></div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                        {# display navigation #}
+                        <div class="navigation">
+                            {{ knp_pagination_render(pagination) }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block javascripts %}
+    {{parent()}}
+{% endblock %}

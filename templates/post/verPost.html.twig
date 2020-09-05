@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello PostController!{% endblock %}
+
+{% block body %}
+    {{ parent() }}
+    <div class="site-wrap">
+        <div class="site-blocks-cover inner-page-cover" style="min-height: 130px;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 text-center pt-4">
+                        <!--<a href="#">{{ post.titulo }}--> </a> {{ post.fecharegistro | date('Y-m-d') }}
+                        <h1 class="mb-3" style="font-size: 35px">{{ post.titulo }}</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+            <div class="container">
+                <div class="row justify-content-between">
+                    <div class="col-lg-3 ml-auto">
+                        <div class="featured-user  mb-5 mb-lg-0">
+                            <h3 class="mb-4">Post recientes</h3>
+                            {% for postUser in posts %}
+                                <ul class="list-unstyled" style="cursor: pointer" onclick="window.location.href='{{ path('VerPosts',{id:postUser.id}) }}'">
+                                    <li>
+                                        <a class="d-flex align-items-center">
+                                            <div class="podcaster">
+                                                <span class="d-block">{{ postUser.titulo }}</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="col-md-7 pb-5 mr-auto">
+                        <img src="{{ asset('uploads/images/'~post.image) }}" alt="Image" width="100%">
+                        <p class="mt-4">{{ post.texto }}</p>
+                    </div>
+                </div>
+            </div>
+
+    </div>
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello PostController!{% endblock %}
+
+{% block body %}
+    {{ parent() }}
+    <div class="site-wrap">
+        <div class="site-section" style="padding-top: 3%;">
+            <div class="container">
+                <h1 class="text-center mb-5">Mis post</h1>
+                <div class="row">
+                    <div class="col-lg-3">
+                        <div class="featured-user  mb-5 mb-lg-0">
+                            <h3 class="mb-4">Post recientes</h3>
+                            {% for postUser in posts %}
+                            <ul class="list-unstyled" style="cursor: pointer" onclick="window.location.href='{{ path('VerPosts',{id:postUser.id}) }}'">
+                                <li>
+                                    <a class="d-flex align-items-center">
+                                        <div class="podcaster">
+                                            <span class="d-block">{{ postUser.titulo }}</span>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="col-lg-9">
+                        {% for postUser in posts %}
+                            <div class="d-block d-md-flex podcast-entry bg-white mb-5" data-aos="fade-up">
+                                <div class="image" style="background-image: url({{ asset('uploads/images/'~postUser.image) }});"></div>
+                                <div class="text">
+                                    <h3 class="font-weight-light" style="cursor: pointer" onclick="window.location.href='{{ path('VerPosts',{id:postUser.id}) }}'">{{ postUser.titulo }}</h3>
+                                    <div class="text-white mb-3"><span class="text-black-opacity-05"><small>{{ postUser.fecharegistro | date('Y-m-d') }} </small></div>
+                                    <button type="button" class="btn btn-primary">Editar</button>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
