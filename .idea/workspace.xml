@@ -10,20 +10,13 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2234e94e-464d-48bf-8e0c-96d7f18e163d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/templates/post/edit-post.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/DashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/DashboardController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/PostController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/PostController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/post/list-posts.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/post/list-posts.html.twig" afterDir="false" />
-    </list>
+    <list default="true" id="2234e94e-464d-48bf-8e0c-96d7f18e163d" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
   </component>
@@ -163,6 +156,7 @@
       <option name="presentableId" value="Default" />
       <updated>1599155552359</updated>
       <workItem from="1599155556496" duration="53474000" />
+      <workItem from="1600040755891" duration="744000" />
     </task>
     <servers />
   </component>
@@ -179,6 +173,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="488" y="80" key="#com.intellij.ide.util.MemberChooser" timestamp="1599255003832">
