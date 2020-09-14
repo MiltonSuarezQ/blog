@@ -12,13 +12,7 @@
   <component name="ChangeListManager">
     <list default="true" id="2234e94e-464d-48bf-8e0c-96d7f18e163d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/contacto/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/contacto/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/post/edit-post.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/post/edit-post.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/post/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/post/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/post/list-posts.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/post/list-posts.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/post/verPost.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/post/verPost.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/register/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/register/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -166,6 +160,7 @@
       <updated>1599155552359</updated>
       <workItem from="1599155556496" duration="53474000" />
       <workItem from="1600040755891" duration="1530000" />
+      <workItem from="1600061920260" duration="557000" />
     </task>
     <servers />
   </component>

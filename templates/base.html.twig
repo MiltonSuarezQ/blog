@@ -77,6 +77,15 @@
             <script src="{{ asset('js/jquery.magnific-popup.min.js') }}"></script>
             <script src="{{ asset('js/aos.js') }}"></script>
             <script src="{{ asset('js/main.js') }}"></script>
+            <script>
+                $('#post_image').on('change',function(){
+                    //get the file name
+                    var fileName = $(this).val();
+                    //replace the "Choose a file" label
+                    $('.custom-file-label').html(fileName);
+                    console.log(fileName);
+                })
+            </script>
         {% endblock %}
     </body>
 </html>
